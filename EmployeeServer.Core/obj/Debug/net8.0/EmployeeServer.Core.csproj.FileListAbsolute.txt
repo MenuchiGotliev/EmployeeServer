@@ -1,0 +1,11 @@
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Core\bin\Debug\net8.0\EmployeeServer.Core.deps.json
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Core\bin\Debug\net8.0\EmployeeServer.Core.dll
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Core\bin\Debug\net8.0\EmployeeServer.Core.pdb
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Core\obj\Debug\net8.0\EmployeeServer.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Core\obj\Debug\net8.0\EmployeeServer.Core.AssemblyInfoInputs.cache
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Core\obj\Debug\net8.0\EmployeeServer.Core.AssemblyInfo.cs
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Core\obj\Debug\net8.0\EmployeeServer.Core.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Core\obj\Debug\net8.0\EmployeeServer.Core.dll
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Core\obj\Debug\net8.0\refint\EmployeeServer.Core.dll
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Core\obj\Debug\net8.0\EmployeeServer.Core.pdb
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Core\obj\Debug\net8.0\ref\EmployeeServer.Core.dll
