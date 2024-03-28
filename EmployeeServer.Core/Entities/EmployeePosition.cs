@@ -9,14 +9,13 @@ namespace EmployeeServer.Core.Entities
 {
     public class EmployeePosition
     {
-        public class EmployeeRole
-        {
+      
             public int EmployeeId { get; set; }
             public int PositionId { get; set; }
             public DateTime EntryDate { get; set; }
             public Employee Employee { get; set; }
             public Position Position { get; set; }
-        }
+        
 
     }
 }

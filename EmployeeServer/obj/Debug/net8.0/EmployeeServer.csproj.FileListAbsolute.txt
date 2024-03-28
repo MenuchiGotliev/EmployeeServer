@@ -138,3 +138,4 @@ C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServe
 C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer\obj\Debug\net8.0\EmployeeServer.pdb
 C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer\obj\Debug\net8.0\EmployeeServer.genruntimeconfig.cache
 C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer\obj\Debug\net8.0\ref\EmployeeServer.dll
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer\obj\Debug\net8.0\EmployeeServer.sourcelink.json

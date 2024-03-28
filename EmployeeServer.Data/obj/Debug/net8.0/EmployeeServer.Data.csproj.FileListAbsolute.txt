@@ -15,3 +15,4 @@ C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServe
 C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Data\obj\Debug\net8.0\EmployeeServer.Data.pdb
 C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Data\obj\Debug\net8.0\EmployeeServer.Data.genruntimeconfig.cache
 C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Data\obj\Debug\net8.0\ref\EmployeeServer.Data.dll
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Data\obj\Debug\net8.0\EmployeeServer.Data.sourcelink.json

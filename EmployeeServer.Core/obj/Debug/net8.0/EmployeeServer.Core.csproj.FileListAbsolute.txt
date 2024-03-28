@@ -9,3 +9,4 @@ C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServe
 C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Core\obj\Debug\net8.0\refint\EmployeeServer.Core.dll
 C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Core\obj\Debug\net8.0\EmployeeServer.Core.pdb
 C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Core\obj\Debug\net8.0\ref\EmployeeServer.Core.dll
+C:\Users\User\Documents\תכנות מקצועות\פרקטיקום\EmployeeServer\EmployeeServer.Core\obj\Debug\net8.0\EmployeeServer.Core.sourcelink.json

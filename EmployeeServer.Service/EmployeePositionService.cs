@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace EmployeeServer.Service
 {
-    internal class PositenSevice
+    public class EmployeePositionService
     {
+
     }
 }
