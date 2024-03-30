@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeServer", "EmployeeServer\EmployeeServer.csproj", "{FE40DA1A-8263-4534-B9F6-717C07141CF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeServer", "EmployeeServer\EmployeeServer.csproj", "{FE40DA1A-8263-4534-B9F6-717C07141CF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeServer.Core", "EmployeeServer.Core\EmployeeServer.Core.csproj", "{A64CD30C-09D5-40D1-8E5B-D0B7B576C128}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeServer.Core", "EmployeeServer.Core\EmployeeServer.Core.csproj", "{A64CD30C-09D5-40D1-8E5B-D0B7B576C128}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeServer.Data", "EmployeeServer.Data\EmployeeServer.Data.csproj", "{6248A9E6-9257-44E4-B1A0-565B3E023485}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeServer.Data", "EmployeeServer.Data\EmployeeServer.Data.csproj", "{6248A9E6-9257-44E4-B1A0-565B3E023485}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeServer.Service", "EmployeeServer.Service\EmployeeServer.Service.csproj", "{41D1DC0E-3C7E-4DA7-B146-BC60ECC3A7E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeServer.Service", "EmployeeServer.Service\EmployeeServer.Service.csproj", "{41D1DC0E-3C7E-4DA7-B146-BC60ECC3A7E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

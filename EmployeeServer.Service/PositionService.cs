@@ -17,7 +17,7 @@ namespace EmployeeServer.Service
             _positionRepository = positionRepository;
         }
 
-        public async Task<Position> AddAsync(Position position)
+        public async Task AddAsync(Position position)
         {
             await _positionRepository.AddAsync(position);
         }
