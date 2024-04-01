@@ -9,28 +9,10 @@ namespace EmployeeServer.Core.Services
 {
     public interface IEmployeePositionService
     {
-        // Get all employee positions
-        Task<IEnumerable<EmployeePosition>> GetEmployeePositionsAsync();
+        Task<EmployeePosition> AddPositionToEmployeeAsync(EmployeePosition EmployeePosition);
+        Task<EmployeePosition> UpdatePositionToEmployeeAsync(int employeeId, int positionId, EmployeePosition EmployeePosition);
 
-        // Get employee position by ID
-        Task<EmployeePosition> GetEmployeePositionByIdAsync(int employeeId, int positionId);
-
-        // Add employee position
-        Task AddEmployeePositionAsync(EmployeePosition employeePosition);
-
-        // Update employee position
-        Task UpdateEmployeePositionAsync(EmployeePosition employeePosition);
-
-        // Delete employee position
-        Task DeleteEmployeePositionAsync(int employeeId, int positionId);
-
-        // Get employee positions by employee ID
-        Task<IEnumerable<EmployeePosition>> GetEmployeePositionsByEmployeeIdAsync(int employeeId);
-
-        // Get employee positions by position ID
-        Task<IEnumerable<EmployeePosition>> GetEmployeePositionsByPositionIdAsync(int positionId);
-
-        // Get current employee position by employee ID
-        Task<EmployeePosition> GetCurrentEmployeePositionByEmployeeIdAsync(int employeeId);
+        Task<IEnumerable<EmployeePosition>> GetEmployeePositionsAsync(int employeeId);
+        Task<bool> DeletePositionOfEmployeeAsync(int employeeId, int positionId);
     }
 }

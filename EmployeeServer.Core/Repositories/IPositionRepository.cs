@@ -13,10 +13,10 @@ namespace EmployeeServer.Core.Repositories
 
         Task<Position> GetByIdAsync(int positionId);
 
-        Task AddAsync(Position position);
+        Task<Position> AddAsync(Position position);
 
-        Task UpdateAsync(Position position);
+        Task<Position> UpdateAsync(Position position);
 
-        Task DeleteAsync(int positionId);
+        Task<bool> DeleteAsync(int positionId);
     }
 }

@@ -15,8 +15,8 @@ namespace EmployeeServer.Core.Services
 
         Task<Employee> AddAsync(Employee employee);
 
-        Task<Employee> UpdateAsync(Employee employee);
+        Task<Employee> UpdateAsync(int id,Employee employee);
 
-        Task DeleteAsync(int employeeId);
+        Task<bool> DeleteAsync(int employeeId);
     }
 }

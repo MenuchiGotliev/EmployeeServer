@@ -17,6 +17,6 @@ namespace EmployeeServer.Core.Services
 
         Task<Position> UpdateAsync(Position position);
 
-        Task DeleteAsync(int positionId);
+        Task<bool> DeleteAsync(int positionId);
     }
 }

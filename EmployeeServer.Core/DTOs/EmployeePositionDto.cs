@@ -14,5 +14,6 @@ namespace EmployeeServer.Core.DTOs
         public DateTime EntryDate { get; set; }
         public Employee Employee { get; set; }
         public Position Position { get; set; }
+        public bool IsManager { get; set; }
     }
 }

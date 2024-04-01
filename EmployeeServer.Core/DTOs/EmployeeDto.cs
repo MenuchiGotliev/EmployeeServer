@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmployeeServer.Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +7,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeServer.Core.DTOs
 {
-    public enum Gender
-    {
-        male = 1,
-        female = 2
-    }
+   
     public class EmployeeDto
     {
         public int Id { get; set; }
@@ -20,6 +17,5 @@ namespace EmployeeServer.Core.DTOs
         public DateTime StartDate { get; set; }
         public DateTime BirthDate { get; set; }
         public Gender Gender { get; set; }
-        public bool EmployeeStatus { get; set; }
     }
 }

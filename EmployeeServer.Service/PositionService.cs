@@ -1,5 +1,6 @@
 ﻿using EmployeeServer.Core.Entities;
 using EmployeeServer.Core.Repositories;
+using EmployeeServer.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeServer.Service
 {
-    public class PositionService
+    public class PositionService:IPositionService
     {
         private readonly IPositionRepository _positionRepository;
 
@@ -17,14 +18,14 @@ namespace EmployeeServer.Service
             _positionRepository = positionRepository;
         }
 
-        public async Task AddAsync(Position position)
+        public async Task<Position> AddAsync(Position position)
         {
-            await _positionRepository.AddAsync(position);
+            return await _positionRepository.AddAsync(position);
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            await _positionRepository.DeleteAsync(id);
+          return  await _positionRepository.DeleteAsync(id);
         }
 
         public async Task<IEnumerable<Position>> GetAllAsync()
@@ -37,9 +38,15 @@ namespace EmployeeServer.Service
             return await _positionRepository.GetByIdAsync(id);
         }
 
-        public async Task UpdateAsync( Position position)
+        public async Task<Position> UpdateAsync( Position position)
         {
-             await _positionRepository.UpdateAsync( position);
+             return await _positionRepository.UpdateAsync( position);
         }
+
+
+
+       
+
+        
     }
 }

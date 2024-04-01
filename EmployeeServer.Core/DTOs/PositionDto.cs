@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace EmployeeServer.Core.DTOs
 {
-    internal class PositionDto
+    public class PositionDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public bool IsManager { get; set; }
+       
     }
 }

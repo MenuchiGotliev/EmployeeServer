@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EmployeeServer.Core\EmployeeServer.Core.csproj" />
+    <ProjectReference Include="..\EmployeeServer.Data\EmployeeServer.Data.csproj" />
   </ItemGroup>
 
 </Project>

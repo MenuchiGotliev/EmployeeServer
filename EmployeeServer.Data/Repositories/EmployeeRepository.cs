@@ -25,26 +25,55 @@ namespace EmployeeServer.Data.Repositories
 
         public async Task<IEnumerable<Employee>> GetAllAsync()
         {
-            return await _dataContext.Employees.ToListAsync();
+            return await _dataContext.Employees
+                .Where(e=>e.EmployeeStatus).ToListAsync();
         }
 
-        public async Task AddAsync(Employee employee)
+        public async Task<Employee> AddAsync(Employee employee)
         {
             await _dataContext.Employees.AddAsync(employee);
-             await _dataContext.SaveChangesAsync();
+            await _dataContext.SaveChangesAsync();
+            return employee;
         }
 
-        public async Task UpdateAsync(Employee employee)
+        public async Task<Employee> UpdateAsync(int id, Employee employee)
         {
-            _dataContext.Employees.Update(employee);
+            var updateEmployee = await _dataContext.Employees.FirstOrDefaultAsync(e => e.Id == id);
+            if (updateEmployee == null)
+            {
+                return null;
+            }
+            updateEmployee.FirstName = employee.FirstName;
+            updateEmployee.LastName =  employee.LastName;
+            updateEmployee.Identity =  employee.Identity;
+            updateEmployee.Gender =    employee.Gender;
+            updateEmployee.BirthDate = employee.BirthDate;
+            updateEmployee.StartDate = employee.StartDate;
+
             await _dataContext.SaveChangesAsync();
+
+            return employee;
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            var employee = await _dataContext.Employees.FindAsync(id);
-            _dataContext.Employees.Remove(employee);
-            await _dataContext.SaveChangesAsync();
+            var employee = await _dataContext.Employees.FirstOrDefaultAsync(e => e.Id == id );
+
+            if (employee != null)
+            {
+                var positions = await _dataContext.EmployeePositions.Where(ep => ep.EmployeeId == employee.Id).ToListAsync();
+                foreach (var position in positions)
+                {
+                    position.EmployeePositionStatus = false;
+                }
+                employee.EmployeeStatus = false;
+
+                await _dataContext.SaveChangesAsync();
+                return true; 
+            }
+         
+            
+            return false; 
         }
 
    

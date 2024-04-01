@@ -1,4 +1,5 @@
 ﻿using EmployeeServer.Core.Entities;
+using EmployeeServer.Core.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,40 +9,40 @@ using System.Threading.Tasks;
 
 namespace EmployeeServer.Data.Repositories
 {
-    public class EmplyeePositionRepository
+    public class EmplyeePositionRepository:IEmployeePositionRepository
     {
-        private readonly DataContext _context;
+        private readonly DataContext _dataContext;
         public EmplyeePositionRepository(DataContext context)
         {
-            _context = context;
+            _dataContext = context;
         }
-        public async Task<EmployeePosition> AddPositionToEmployeeAsync(EmployeePosition EmployeePosition)
+        public async Task<EmployeePosition> AddPositionToEmployeeAsync(EmployeePosition employeePosition)
         {
-            await _context.EmployeePositions.AddAsync(EmployeePosition);
-            _context.SaveChanges();
-            return EmployeePosition;
+            await _dataContext.EmployeePositions.AddAsync(employeePosition);
+            _dataContext.SaveChanges();
+            return employeePosition;
         }
-        public async Task<EmployeePosition> UpdatePositionToEmployeeAsync(int empoyeeId, int positionId, EmployeePosition EmployeePosition)
+        public async Task<EmployeePosition> UpdatePositionToEmployeeAsync(int empoyeeId, int positionId, EmployeePosition employeePosition)
         {
-            var position = await _context.EmployeePositions.FirstOrDefaultAsync(e => e.PositionId == positionId && e.EmployeeId == empoyeeId);
+            var position = await _dataContext.EmployeePositions.FirstOrDefaultAsync(e => e.PositionId == positionId && e.EmployeeId == empoyeeId);
             if (position == null)
             {
                 return null;
             }
-            
-            position.EntryDate = EmployeePosition.EntryDate;
-            await _context.SaveChangesAsync();
+            position.IsManager = employeePosition.IsManager;
+            position.EntryDate = employeePosition.EntryDate;
+            await _dataContext.SaveChangesAsync();
             return position;
         }
 
         public async Task<bool> DeletePositionOfEmployeeAsync(int employeeId, int positionId)
         {
-            var EmployeePosition = await _context.EmployeePositions.FirstOrDefaultAsync(e => e.EmployeeId == employeeId && e.PositionId == positionId);
+            var employeePosition = await _dataContext.EmployeePositions.FirstOrDefaultAsync(e => e.EmployeeId == employeeId && e.PositionId == positionId);
 
-            if (EmployeePosition != null)
+            if (employeePosition != null)
             {
-               
-                await _context.SaveChangesAsync();
+                employeePosition.EmployeePositionStatus = false;
+                await _dataContext.SaveChangesAsync();
                 return true; 
             }
 
@@ -49,7 +50,7 @@ namespace EmployeeServer.Data.Repositories
         }
         public async Task<IEnumerable<EmployeePosition>> GetEmployeePositionsAsync(int employeeId)
         {
-            return await _context.EmployeePositions.Where(e => e.EmployeeId == employeeId).ToListAsync();
+            return await _dataContext.EmployeePositions.Where(e => e.EmployeeId == employeeId).Where(p=>p.EmployeePositionStatus).ToListAsync();
         }
 
 

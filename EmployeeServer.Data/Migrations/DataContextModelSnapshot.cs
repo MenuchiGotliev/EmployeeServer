@@ -43,6 +43,10 @@ namespace EmployeeServer.Data.Migrations
                     b.Property<int>("Gender")
                         .HasColumnType("int");
 
+                    b.Property<string>("Identity")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -55,6 +59,30 @@ namespace EmployeeServer.Data.Migrations
                     b.ToTable("Employees");
                 });
 
+            modelBuilder.Entity("EmployeeServer.Core.Entities.EmployeePosition", b =>
+                {
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PositionId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("EmployeePositionStatus")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("EntryDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsManager")
+                        .HasColumnType("bit");
+
+                    b.HasKey("EmployeeId", "PositionId");
+
+                    b.HasIndex("PositionId");
+
+                    b.ToTable("EmployeePositions");
+                });
+
             modelBuilder.Entity("EmployeeServer.Core.Entities.Position", b =>
                 {
                     b.Property<int>("Id")
@@ -63,35 +91,32 @@ namespace EmployeeServer.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("EmployeeId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsManager")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("StartPosition")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("name")
-                        .HasColumnType("int");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("EmployeeId");
 
                     b.ToTable("Positions");
                 });
 
-            modelBuilder.Entity("EmployeeServer.Core.Entities.Position", b =>
+            modelBuilder.Entity("EmployeeServer.Core.Entities.EmployeePosition", b =>
                 {
-                    b.HasOne("EmployeeServer.Core.Entities.Employee", null)
-                        .WithMany("Positions")
-                        .HasForeignKey("EmployeeId");
-                });
+                    b.HasOne("EmployeeServer.Core.Entities.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-            modelBuilder.Entity("EmployeeServer.Core.Entities.Employee", b =>
-                {
-                    b.Navigation("Positions");
+                    b.HasOne("EmployeeServer.Core.Entities.Position", "Position")
+                        .WithMany()
+                        .HasForeignKey("PositionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+
+                    b.Navigation("Position");
                 });
 #pragma warning restore 612, 618
         }

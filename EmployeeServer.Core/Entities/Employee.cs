@@ -8,11 +8,11 @@ namespace EmployeeServer.Core.Entities
 {
     public enum Gender
     {
-        male = 1,
-        female = 2
+        Male,
+        Female 
     }
     public class Employee
-    {
+    { 
         public int Id { get; set; }
         public string Identity { get; set; }
         public string FirstName { get; set; }
@@ -21,5 +21,9 @@ namespace EmployeeServer.Core.Entities
         public DateTime BirthDate { get; set; }
         public Gender Gender  { get; set; }
         public bool EmployeeStatus { get; set; }
+        public Employee()
+        {
+            EmployeeStatus = true;
+        }
     }
 }

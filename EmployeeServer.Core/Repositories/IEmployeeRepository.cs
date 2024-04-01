@@ -13,10 +13,10 @@ namespace EmployeeServer.Core.Repositories
 
         Task<Employee> GetByIdAsync(int employeeId);
 
-        Task AddAsync(Employee employee);
+        Task<Employee> AddAsync(Employee employee);
 
-        Task UpdateAsync(Employee employee);
+        Task<Employee> UpdateAsync(int id,Employee employee);
 
-        Task DeleteAsync(int employeeId);
+        Task<bool> DeleteAsync(int employeeId);
     }
 }
