@@ -70,11 +70,11 @@ namespace EmployeeServer.Data.Migrations
                     b.Property<bool>("EmployeePositionStatus")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("EntryDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsManager")
+                    b.Property<bool>("IsManagement")
                         .HasColumnType("bit");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("EmployeeId", "PositionId");
 

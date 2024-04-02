@@ -12,10 +12,10 @@ namespace EmployeeServer.Core.Entities
 
         public int EmployeeId { get; set; }
         public int PositionId { get; set; }
-        public DateTime EntryDate { get; set; }
+        public DateTime StartDate { get; set; }
         public Employee Employee { get; set; }
         public Position Position { get; set; }
-        public bool IsManager { get; set; }
+        public bool IsManagement { get; set; }
         public bool EmployeePositionStatus { get; set; }
         public EmployeePosition()
         {

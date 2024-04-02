@@ -29,8 +29,8 @@ namespace EmployeeServer.Data.Repositories
             {
                 return null;
             }
-            position.IsManager = employeePosition.IsManager;
-            position.EntryDate = employeePosition.EntryDate;
+            position.IsManagement = employeePosition.IsManagement;
+            position.StartDate = employeePosition.StartDate;
             await _dataContext.SaveChangesAsync();
             return position;
         }
