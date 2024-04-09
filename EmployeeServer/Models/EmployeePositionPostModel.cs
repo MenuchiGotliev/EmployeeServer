@@ -6,7 +6,7 @@ namespace EmployeeServer.Models
     {
         public int EmployeeId { get; set; }
         public int PositionId { get; set; }
-        public DateTime EntryDate { get; set; }
-        public bool IsManager { get; set; }
+        public DateTime StartDate { get; set; }
+        public bool IsManagement { get; set; }
     }
 }

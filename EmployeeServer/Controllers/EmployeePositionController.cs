@@ -2,6 +2,7 @@
 using EmployeeServer.Core.DTOs;
 using EmployeeServer.Core.Entities;
 using EmployeeServer.Core.Services;
+using EmployeeServer.Data.Migrations;
 using EmployeeServer.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,26 +30,29 @@ namespace EmployeeServer.Controllers
             return await _employeePositionService.GetEmployeePositionsAsync(employeeId);
         }
        
-
-
         // POST api/<EmployeePositionController>
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] EmployeePositionPostModel value)
+        public async Task<ActionResult> Post([FromBody] IEnumerable< EmployeePositionPostModel> value)
         {
-            var newEmployee = await _employeePositionService.AddPositionToEmployeeAsync(_mapper.Map<EmployeePosition>(value));
-            return Ok(newEmployee);
+            
+            var newEmployees = await _employeePositionService.AddPositionToEmployeeAsync(_mapper.Map< IEnumerable<EmployeePosition>>(value));
+            if(newEmployees == null)
+            {
+                return NotFound();
+            }
+            return Ok(_mapper.Map<IEnumerable<EmployeePositionDto>>(newEmployees));
         }
 
         // PUT api/<EmployeePositionController>/5
-        [HttpPut("{employeeId}/position/{positionId}")]
-        public async Task<ActionResult> Put(int employeeId,int positionId, [FromBody] EmployeePositionPostModel value)
-        {
-            var updateEmployeePosition = await _employeePositionService.UpdatePositionToEmployeeAsync(employeeId, positionId, _mapper.Map<EmployeePosition>(value));
+        [HttpPut("{employeeId}/positions")]
+        public async Task<ActionResult> Put(int employeeId, [FromBody] IEnumerable<EmployeePositionPostModel> value)
+        { 
+            var updateEmployeePosition = await _employeePositionService.UpdatePositionToEmployeeAsync(employeeId, _mapper.Map<IEnumerable<EmployeePosition>>(value));
             if (updateEmployeePosition == null)
             {
                 return NotFound();
             }
-            return Ok(_mapper.Map<EmployeePositionDto>(updateEmployeePosition));
+            return Ok(_mapper.Map<IEnumerable<EmployeePositionDto>>(updateEmployeePosition));
         }
 
         // DELETE api/<EmployeePositionController>/5

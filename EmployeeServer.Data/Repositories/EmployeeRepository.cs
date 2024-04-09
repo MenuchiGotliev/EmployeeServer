@@ -48,7 +48,7 @@ namespace EmployeeServer.Data.Repositories
             updateEmployee.Identity =  employee.Identity;
             updateEmployee.Gender =    employee.Gender;
             updateEmployee.BirthDate = employee.BirthDate;
-            updateEmployee.StartDate = employee.StartDate;
+            updateEmployee.EntryDate = employee.EntryDate;
 
             await _dataContext.SaveChangesAsync();
 

@@ -4607,9 +4607,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\תכנות מקצועות\\פרקטיקום\\EmployeeServer\\EmployeeServer\\EmployeeServer.csproj",
-      "projectName": "EmployeeServer",
-      "projectPath": "C:\\Users\\User\\Documents\\תכנות מקצועות\\פרקטיקום\\EmployeeServer\\EmployeeServer\\EmployeeServer.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\תכנות מקצועות\\פרקטיקום\\EmployeeServer\\EmployeeServer\\EmployeeServer.API.csproj",
+      "projectName": "EmployeeServer.API",
+      "projectPath": "C:\\Users\\User\\Documents\\תכנות מקצועות\\פרקטיקום\\EmployeeServer\\EmployeeServer\\EmployeeServer.API.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\User\\Documents\\תכנות מקצועות\\פרקטיקום\\EmployeeServer\\EmployeeServer\\obj\\",
       "projectStyle": "PackageReference",

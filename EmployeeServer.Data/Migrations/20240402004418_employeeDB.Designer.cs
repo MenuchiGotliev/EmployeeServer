@@ -54,7 +54,7 @@ namespace EmployeeServer.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("StartDate")
+                    b.Property<DateTime>("EntryDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");

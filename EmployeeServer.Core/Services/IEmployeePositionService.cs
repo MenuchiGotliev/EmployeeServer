@@ -9,8 +9,8 @@ namespace EmployeeServer.Core.Services
 {
     public interface IEmployeePositionService
     {
-        Task<EmployeePosition> AddPositionToEmployeeAsync(EmployeePosition EmployeePosition);
-        Task<EmployeePosition> UpdatePositionToEmployeeAsync(int employeeId, int positionId, EmployeePosition EmployeePosition);
+        Task<IEnumerable<EmployeePosition>> AddPositionToEmployeeAsync(IEnumerable<EmployeePosition> employeePositions);
+        Task<IEnumerable<EmployeePosition>> UpdatePositionToEmployeeAsync(int employeeId, IEnumerable<EmployeePosition> employeePositions);
 
         Task<IEnumerable<EmployeePosition>> GetEmployeePositionsAsync(int employeeId);
         Task<bool> DeletePositionOfEmployeeAsync(int employeeId, int positionId);
